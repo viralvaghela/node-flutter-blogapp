@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 ///Delete single post
 router.delete("/:postId", async (req, res) => {
   try {
-    const deletedPost = await Post.remove({
+    const deletedPost = await Post.deleteOne({
       _id: req.params.postId,
     });
     res.json(deletedPost);
